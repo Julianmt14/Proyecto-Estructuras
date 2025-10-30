@@ -18,7 +18,7 @@ struct Proceso {
     vector<Proceso*> hijos; // subprocesos
     
     Proceso(int _id, string _nombre, int _prioridad) 
-        : id(_id), nombre(_nombre), prioridad(_prioridad), estado("Listo") {}
+        : id(_id), nombre(_nombre), estado("Listo"), prioridad(_prioridad) {}
 };
 
 // Clase SimuladorSO
@@ -79,14 +79,11 @@ public:
             
             // Remover de la pila si está allí
             stack<string> temp;
-            bool encontrado = false;
             while (!pilaCPU.empty()) {
                 string top = pilaCPU.top();
                 pilaCPU.pop();
                 if (top != nombre + "()") {
                     temp.push(top);
-                } else {
-                    encontrado = true;
                 }
             }
             while (!temp.empty()) {

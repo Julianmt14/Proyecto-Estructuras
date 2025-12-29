@@ -3,7 +3,33 @@
 *.out
 *.o
 *.obj
+*.app
+*.ko
+*.elf
 simulador
+simulator
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
 
 # IDE and editor files
 .vscode/
@@ -15,11 +41,15 @@ simulador
 # System files
 .DS_Store
 Thumbs.db
+.directory
 
 # Temporary files
 /tmp/
 *.tmp
+*.temp
 *.log
+*.bak
+*.backup
 
 # Node modules (if using npm in the future)
 node_modules/
@@ -28,3 +58,4 @@ package-lock.json
 # Build directories
 build/
 dist/
+target/

@@ -125,10 +125,10 @@ public:
         auto it = std::find(parent->children.begin(), parent->children.end(), node);
         if (it != parent->children.end()) {
             parent->children.erase(it);
-            // Count all nodes being deleted (node and all its descendants)
+            // Count all nodes being deleted BEFORE deleting them
             int deletedCount = countNodes(node);
-            delete node;
             nodeCount -= deletedCount;
+            delete node;
             return true;
         }
         return false;

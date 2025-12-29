@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Sistema Operativo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚙️ Simulador de Sistema Operativo</h1>
+            <p class="subtitle">Gestión de Procesos con Estructuras de Datos</p>
+        </header>
+
+        <div class="control-panel">
+            <button id="btnAgregarProceso" class="btn btn-add">➕ Agregar Proceso</button>
+            <button id="btnEjecutar" class="btn btn-execute">▶️ Ejecutar Siguiente</button>
+            <button id="btnTerminar" class="btn btn-terminate">⏹️ Terminar Proceso</button>
+            <button id="btnActualizar" class="btn btn-refresh">🔄 Actualizar Vista</button>
+        </div>
+
+        <div class="main-content">
+            <!-- Panel de Procesos -->
+            <div class="panel">
+                <h2>📋 Lista de Procesos</h2>
+                <div id="listaProcesos" class="proceso-list"></div>
+            </div>
+
+            <!-- Panel de Cola -->
+            <div class="panel">
+                <h2>📥 Cola de Procesos Listos</h2>
+                <div id="colaVisual" class="cola-container"></div>
+            </div>
+
+            <!-- Panel de Pila CPU -->
+            <div class="panel">
+                <h2>🔥 Pila de Llamadas CPU</h2>
+                <div id="pilaVisual" class="pila-container"></div>
+            </div>
+
+            <!-- Panel de Árbol de Jerarquía -->
+            <div class="panel panel-wide">
+                <h2>🌳 Árbol de Jerarquía de Procesos</h2>
+                <div id="arbolVisual" class="arbol-container"></div>
+            </div>
+        </div>
+
+        <!-- Console Log -->
+        <div class="console-panel">
+            <h3>💻 Log del Sistema</h3>
+            <div id="consoleLog" class="console-content"></div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar proceso -->
+    <div id="modalAgregar" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Agregar Nuevo Proceso</h2>
+            <form id="formAgregarProceso">
+                <div class="form-group">
+                    <label for="nombreProceso">Nombre del Proceso:</label>
+                    <input type="text" id="nombreProceso" required placeholder="ej: notepad.exe">
+                </div>
+                <div class="form-group">
+                    <label for="prioridadProceso">Prioridad (1-5):</label>
+                    <input type="number" id="prioridadProceso" min="1" max="5" value="3" required>
+                </div>
+                <button type="submit" class="btn btn-add">Crear Proceso</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para terminar proceso -->
+    <div id="modalTerminar" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Terminar Proceso</h2>
+            <form id="formTerminarProceso">
+                <div class="form-group">
+                    <label for="procesoSeleccionado">Seleccionar Proceso:</label>
+                    <select id="procesoSeleccionado" required>
+                        <option value="">-- Seleccione un proceso --</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-terminate">Terminar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

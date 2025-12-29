@@ -1,0 +1,30 @@
+# Compiled C++ files
+*.exe
+*.out
+*.o
+*.obj
+simulador
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+/tmp/
+*.tmp
+*.log
+
+# Node modules (if using npm in the future)
+node_modules/
+package-lock.json
+
+# Build directories
+build/
+dist/

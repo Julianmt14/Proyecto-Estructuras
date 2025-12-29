@@ -1,0 +1,14 @@
+{
+  "procesos": [
+    {"id":1,"nombre":"chrome.exe","estado":"Ejecutando","prioridad":2},
+    {"id":2,"nombre":"spotify.exe","estado":"Listo","prioridad":1},
+    {"id":3,"nombre":"code.exe","estado":"Listo","prioridad":3}
+  ],
+  "cola": ["spotify.exe","code.exe"],
+  "pila": ["chrome.exe()","render()","processInput()"],
+  "arbol": {
+    "chrome.exe": ["render()","network()","storage()"],
+    "spotify.exe": ["play()","download()"],
+    "code.exe": ["editFile()","compile()"]
+  }
+}

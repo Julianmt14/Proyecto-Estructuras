@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Sistema Operativo - Estructuras de Datos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>🖥️ Simulador de Sistema Operativo</h1>
+        <p>Visualización de Estructuras de Datos Clásicas</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" data-section="queue">
+            <span class="icon">📋</span>
+            Cola (Queue)
+        </button>
+        <button class="nav-btn" data-section="stack">
+            <span class="icon">📚</span>
+            Pila (Stack)
+        </button>
+        <button class="nav-btn" data-section="linkedlist">
+            <span class="icon">🔗</span>
+            Lista Enlazada
+        </button>
+        <button class="nav-btn" data-section="tree">
+            <span class="icon">🌳</span>
+            Árbol
+        </button>
+    </nav>
+
+    <main>
+        <!-- Sección: Cola (Queue) - Planificador de Procesos -->
+        <section id="queue-section" class="content-section active">
+            <div class="section-header">
+                <h2>Cola (Queue) - Planificador de Procesos</h2>
+                <p>Gestión FIFO (First In, First Out) de procesos del sistema</p>
+            </div>
+
+            <div class="controls">
+                <div class="input-group">
+                    <label>Nombre del Proceso:</label>
+                    <input type="text" id="process-name" placeholder="ej: Chrome">
+                </div>
+                <div class="input-group">
+                    <label>Prioridad (1-5):</label>
+                    <input type="number" id="process-priority" min="1" max="5" value="3">
+                </div>
+                <div class="input-group">
+                    <label>Tiempo de CPU:</label>
+                    <input type="number" id="process-time" min="1" max="10" value="5">
+                </div>
+                <button class="btn btn-primary" onclick="enqueueProcess()">➕ Agregar Proceso</button>
+                <button class="btn btn-secondary" onclick="dequeueProcess()">▶️ Ejecutar Proceso</button>
+            </div>
+
+            <div class="visualization">
+                <div id="queue-visual" class="queue-container">
+                    <div class="queue-label">← FRONT</div>
+                    <div id="queue-items" class="items-container"></div>
+                    <div class="queue-label">REAR →</div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h3>📊 Estado de la Cola</h3>
+                <div id="queue-info">
+                    <p>Procesos en cola: <span id="queue-size">0</span></p>
+                    <p>Próximo a ejecutar: <span id="next-process">Ninguno</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Pila (Stack) - Call Stack -->
+        <section id="stack-section" class="content-section">
+            <div class="section-header">
+                <h2>Pila (Stack) - Pila de Llamadas</h2>
+                <p>Gestión LIFO (Last In, First Out) de llamadas de función</p>
+            </div>
+
+            <div class="controls">
+                <div class="input-group">
+                    <label>Nombre de Función:</label>
+                    <input type="text" id="function-name" placeholder="ej: calculateSum">
+                </div>
+                <div class="input-group">
+                    <label>Parámetros:</label>
+                    <input type="text" id="function-params" placeholder="ej: (a, b)">
+                </div>
+                <button class="btn btn-primary" onclick="pushFunction()">⬆️ Push (Llamar)</button>
+                <button class="btn btn-secondary" onclick="popFunction()">⬇️ Pop (Retornar)</button>
+                <button class="btn btn-tertiary" onclick="simulateRecursion()">🔄 Simular Recursión</button>
+            </div>
+
+            <div class="visualization">
+                <div id="stack-visual" class="stack-container">
+                    <div class="stack-label">TOP ↓</div>
+                    <div id="stack-items" class="items-container stack-items"></div>
+                    <div class="stack-label">BOTTOM</div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h3>📊 Estado de la Pila</h3>
+                <div id="stack-info">
+                    <p>Funciones en pila: <span id="stack-size">0</span></p>
+                    <p>Función actual: <span id="current-function">Ninguna</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Lista Enlazada - Gestión de Memoria -->
+        <section id="linkedlist-section" class="content-section">
+            <div class="section-header">
+                <h2>Lista Enlazada - Gestión de Memoria</h2>
+                <p>Bloques de memoria dinámicamente enlazados</p>
+            </div>
+
+            <div class="controls">
+                <div class="input-group">
+                    <label>Tamaño (KB):</label>
+                    <input type="number" id="block-size" min="64" max="2048" step="64" value="256">
+                </div>
+                <button class="btn btn-primary" onclick="addMemoryBlock()">➕ Agregar Bloque</button>
+                <button class="btn btn-secondary" onclick="allocateMemory()">🔒 Asignar Memoria</button>
+                <button class="btn btn-tertiary" onclick="freeMemory()">🔓 Liberar Memoria</button>
+                <button class="btn btn-danger" onclick="removeBlock()">❌ Eliminar Bloque</button>
+            </div>
+
+            <div class="visualization">
+                <div id="linkedlist-visual" class="linkedlist-container">
+                    <div id="linkedlist-items" class="items-container list-items"></div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h3>📊 Estado de la Memoria</h3>
+                <div id="linkedlist-info">
+                    <p>Bloques totales: <span id="list-size">0</span></p>
+                    <p>Memoria libre: <span id="free-memory">0</span> KB</p>
+                    <p>Memoria asignada: <span id="allocated-memory">0</span> KB</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Árbol - Sistema de Archivos -->
+        <section id="tree-section" class="content-section">
+            <div class="section-header">
+                <h2>Árbol - Sistema de Archivos</h2>
+                <p>Estructura jerárquica de directorios y archivos</p>
+            </div>
+
+            <div class="controls">
+                <div class="input-group">
+                    <label>Nombre:</label>
+                    <input type="text" id="node-name" placeholder="ej: documents">
+                </div>
+                <div class="input-group">
+                    <label>Tipo:</label>
+                    <select id="node-type">
+                        <option value="directory">📁 Directorio</option>
+                        <option value="file">📄 Archivo</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Tamaño (KB):</label>
+                    <input type="number" id="file-size" min="1" max="10000" value="100">
+                </div>
+                <button class="btn btn-primary" onclick="addNode()">➕ Agregar Nodo</button>
+                <button class="btn btn-danger" onclick="removeNode()">❌ Eliminar Nodo</button>
+                <button class="btn btn-tertiary" onclick="loadDefaultTree()">🔄 Cargar Ejemplo</button>
+            </div>
+
+            <div class="visualization">
+                <div id="tree-visual" class="tree-container">
+                    <div id="tree-items"></div>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h3>📊 Estado del Árbol</h3>
+                <div id="tree-info">
+                    <p>Nodos totales: <span id="node-count">1</span></p>
+                    <p>Nodo seleccionado: <span id="selected-node">root</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>💡 Proyecto Académico - Estructuras de Datos | Universidad 2025</p>
+        <p>Implementado con HTML, CSS, JavaScript y C++</p>
+    </footer>
+
+    <script src="js/queue.js"></script>
+    <script src="js/stack.js"></script>
+    <script src="js/linkedlist.js"></script>
+    <script src="js/tree.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

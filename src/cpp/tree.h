@@ -50,6 +50,16 @@ private:
         return nullptr;
     }
     
+    // Función auxiliar para contar nodos en un subárbol
+    int countNodes(TreeNode* node) const {
+        if (node == nullptr) return 0;
+        int count = 1; // Count this node
+        for (TreeNode* child : node->children) {
+            count += countNodes(child);
+        }
+        return count;
+    }
+    
     // Función auxiliar para imprimir árbol recursivamente
     void printTreeRecursive(TreeNode* node, std::string prefix, std::string& result) const {
         if (node == nullptr) return;
@@ -115,8 +125,10 @@ public:
         auto it = std::find(parent->children.begin(), parent->children.end(), node);
         if (it != parent->children.end()) {
             parent->children.erase(it);
+            // Count all nodes being deleted (node and all its descendants)
+            int deletedCount = countNodes(node);
             delete node;
-            nodeCount--;
+            nodeCount -= deletedCount;
             return true;
         }
         return false;

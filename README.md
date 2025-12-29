@@ -1,6 +1,6 @@
 # 🖥️ Simulador de Sistema Operativo - Proyecto de Estructuras de Datos
 
-Diseñar e implementar un simulador de sistema operativo que permita visualizar la gestión de procesos utilizando estructuras de datos clásicas como colas, pilas, listas y árboles, integrando una interfaz web dinámica desarrollada con HTML, CSS y JavaScript, y una lógica base en C++.
+Proyecto académico que demuestra el uso práctico de estructuras de datos clásicas (colas, pilas, listas enlazadas y árboles) aplicadas a la simulación de componentes de un sistema operativo, con una interfaz visual moderna y funcional.
 
 ## 📋 Descripción del Proyecto
 
@@ -13,39 +13,40 @@ Este es un proyecto académico que demuestra el uso práctico de cuatro estructu
 
 ## ✨ Características
 
-- ✅ Implementaciones completas en C++ con templates
-- ✅ Interfaz web moderna y responsive
-- ✅ Visualización interactiva en tiempo real
-- ✅ Animaciones y transiciones suaves
-- ✅ Panel de información con estadísticas
-- ✅ Documentación completa en español
-- ✅ Ejemplos de uso y casos prácticos
+- ✅ **Implementaciones completas en C++** con templates y O(1) operations donde es aplicable
+- ✅ **Interfaz web moderna** y responsive con tema oscuro
+- ✅ **Visualización interactiva** en tiempo real con animaciones CSS
+- ✅ **Modo demo funcional** sin necesidad del backend
+- ✅ **Sistema de logs** en tiempo real
+- ✅ **Documentación completa** en español con análisis de complejidad
+- ✅ **Atajos de teclado** (Ctrl+1-4) para navegación rápida
 
 ## 🚀 Inicio Rápido
 
-### Backend (C++)
+### Opción 1: Solo Interfaz Web (Recomendado para comenzar)
+
+```bash
+# Abrir directamente
+cd src/frontend
+# Doble clic en index.html
+```
+
+O con servidor HTTP:
+```bash
+cd src/frontend
+python -m http.server 8000
+# Abre http://localhost:8000 en tu navegador
+```
+
+### Opción 2: Con Backend C++
 
 ```bash
 # Compilar
 make
 
-# Ejecutar
+# Ejecutar demo
 make run
 ```
-
-### Frontend (Web)
-
-1. **Opción 1**: Abrir directamente
-   ```bash
-   # Abrir src/frontend/index.html en tu navegador
-   ```
-
-2. **Opción 2**: Servidor local (recomendado)
-   ```bash
-   cd src/frontend
-   python -m http.server 8000
-   # Luego abrir http://localhost:8000
-   ```
 
 ## 📁 Estructura del Proyecto
 
@@ -81,21 +82,25 @@ Proyecto-Estructuras/
 - **Tipo**: FIFO (First In, First Out)
 - **Uso**: Gestión de procesos en espera
 - **Operaciones**: `enqueue()`, `dequeue()`, `peek()`
+- **Complejidad**: O(1) para todas las operaciones
 
 ### 2. Pila (Stack) - Pila de Llamadas
 - **Tipo**: LIFO (Last In, First Out)
-- **Uso**: Gestión de llamadas de función
+- **Uso**: Gestión de llamadas de función con demo de recursión
 - **Operaciones**: `push()`, `pop()`, `peek()`
+- **Complejidad**: O(1) para todas las operaciones
 
 ### 3. Lista Enlazada - Gestión de Memoria
 - **Tipo**: Lista simplemente enlazada
-- **Uso**: Asignación dinámica de memoria
+- **Uso**: Asignación dinámica de bloques de memoria
 - **Operaciones**: `insertFirst()`, `insertLast()`, `remove()`, `find()`
+- **Complejidad**: O(1) para inserción, O(n) para búsqueda
 
 ### 4. Árbol - Sistema de Archivos
 - **Tipo**: Árbol n-ario
 - **Uso**: Jerarquía de directorios y archivos
 - **Operaciones**: `addChild()`, `removeNode()`, `findNode()`
+- **Complejidad**: O(n) para búsqueda, O(1) para inserción
 
 ## 🛠️ Requisitos
 
@@ -105,6 +110,7 @@ Proyecto-Estructuras/
   - clang 3.4+
   - MSVC 2015+
 - Make (opcional)
+- Compila limpiamente con `-Wall -Wextra -Wpedantic`
 
 ### Frontend
 - Navegador web moderno:
@@ -116,7 +122,7 @@ Proyecto-Estructuras/
 ## 📖 Documentación
 
 - **[Guía de Uso](docs/GUIA_DE_USO.md)**: Instrucciones detalladas para usuarios
-- **[Documentación Técnica](docs/DOCUMENTACION_TECNICA.md)**: Detalles de implementación
+- **[Documentación Técnica](docs/DOCUMENTACION_TECNICA.md)**: Detalles de implementación y análisis de complejidad
 
 ## 🎮 Cómo Usar
 
@@ -127,7 +133,7 @@ Proyecto-Estructuras/
 3. **Visualización**: Los cambios se reflejan en tiempo real en el área de visualización
 4. **Información**: El panel inferior muestra estadísticas actualizadas
 
-### Ejemplos
+### Ejemplos Prácticos
 
 #### Cola - Agregar procesos
 ```
@@ -142,7 +148,7 @@ Proyecto-Estructuras/
 ```
 1. Click "Simular Recursión"
 2. Observe cómo se apilan las llamadas
-3. Note el orden LIFO
+3. Note el orden LIFO al desapilar
 ```
 
 #### Lista Enlazada - Gestionar memoria
@@ -162,10 +168,22 @@ Proyecto-Estructuras/
 
 ## 🎨 Capturas de Pantalla
 
+### Queue - Process Scheduling
+![Queue](https://github.com/user-attachments/assets/f87640fb-78d3-445f-8f44-2f8ba4702f96)
+
+### Stack - Call Stack with Recursion
+![Stack](https://github.com/user-attachments/assets/d4adbfeb-948d-4014-bcf7-be328fce35ce)
+
+### LinkedList - Memory Management
+![LinkedList](https://github.com/user-attachments/assets/54a028a6-cf01-4e0d-9327-5a7be2562571)
+
+### Tree - File System Hierarchy
+![Tree](https://github.com/user-attachments/assets/05172bd5-dd9e-4e3e-baee-c875f982300f)
+
 La interfaz presenta:
-- ✨ Diseño moderno con gradientes
+- ✨ Diseño moderno con gradientes y colores neón
 - 🎯 Visualizaciones claras de cada estructura
-- 📊 Paneles informativos con estadísticas
+- 📊 Paneles informativos con estadísticas en tiempo real
 - 🔄 Animaciones suaves en las transiciones
 - 📱 Diseño responsive para todos los dispositivos
 
@@ -174,23 +192,24 @@ La interfaz presenta:
 ### Pruebas del Backend
 ```bash
 make run
-# Verifica la salida de consola
+# Verifica la salida de consola para cada estructura
 ```
 
 ### Pruebas del Frontend
-1. Abrir `index.html` en navegador
+1. Abrir `src/frontend/index.html` en navegador
 2. Probar cada operación en cada estructura
-3. Verificar consola del navegador (F12)
+3. Verificar consola del navegador (F12) para logs
 
-## 📚 Conceptos Aprendidos
+## 📚 Conceptos Demostrados
 
 Este proyecto demuestra:
 - ✅ Implementación de estructuras de datos fundamentales
 - ✅ Manejo de memoria dinámica en C++
-- ✅ Templates en C++
-- ✅ Manipulación del DOM con JavaScript
-- ✅ Diseño web responsive
+- ✅ Templates genéricos en C++
+- ✅ Manipulación del DOM con JavaScript puro
+- ✅ Diseño web responsive y moderno
 - ✅ Aplicación práctica de algoritmos
+- ✅ Análisis de complejidad temporal
 
 ## 🤝 Contribuciones
 
@@ -217,3 +236,5 @@ Proyecto de Estructuras de Datos - Curso Académico
 ---
 
 **💡 Nota**: Este proyecto fue creado con fines educativos para demostrar el uso práctico de estructuras de datos clásicas en el contexto de sistemas operativos.
+
+**Desarrollado como proyecto académico de Estructuras de Datos**

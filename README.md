@@ -1,161 +1,124 @@
-# 🖥️ Proyecto-Estructuras: Simulador de Sistema Operativo
+# Simulador de Sistema Operativo - Implementación de Estructuras de Datos
 
-Proyecto académico que demuestra el uso práctico de estructuras de datos clásicas (colas, pilas, listas enlazadas y árboles) aplicadas a la simulación de componentes de un sistema operativo, con una interfaz visual moderna y funcional.
+Proyecto profesional que implementa estructuras de datos fundamentales (colas, pilas, listas enlazadas y árboles) aplicadas a la simulación de componentes críticos de un sistema operativo, con interfaz web interactiva y backend en C++.
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 
-Este proyecto académico demuestra el uso práctico de cuatro estructuras de datos fundamentales en ciencias de la computación, aplicadas a la simulación de componentes de un sistema operativo:
+Simulador de sistema operativo que demuestra la aplicación práctica de cuatro estructuras de datos fundamentales en ciencias de la computación: 
 
-- **🔵 Cola (Queue)**: Planificador de procesos con política FIFO
-- **🟢 Pila (Stack)**: Pila de llamadas de funciones (Call Stack)
-- **🟡 Lista Enlazada**: Gestión dinámica de bloques de memoria
-- **🟣 Árbol**: Sistema de archivos jerárquico
+- **Cola (Queue)**: Planificador de procesos con política FIFO
+- **Pila (Stack)**: Pila de llamadas de funciones (Call Stack)
+- **Lista Enlazada**: Gestión dinámica de bloques de memoria
+- **Árbol**: Sistema de archivos jerárquico
 
-## ✨ Características
+## Características Técnicas
 
-- ✅ **Implementaciones completas en C++** con templates y O(1) operations donde es aplicable
-- ✅ **Visualización animada** de estructuras de datos
-- ✅ **Interfaz web moderna** y responsive con tema oscuro y colores neón
-- ✅ **Modo demo funcional** sin necesidad del backend
-- ✅ **Sistema de logs** en tiempo real
-- ✅ **Completamente interactivo** con controles intuitivos
-- ✅ **Documentación completa** en español con análisis de complejidad
-- ✅ **Atajos de teclado** (Ctrl+1-4) para navegación rápida
-- ✅ **Build automation** con Makefile
+- Implementaciones completas en C++ con templates y operaciones O(1) donde es aplicable
+- Visualización en tiempo real de estructuras de datos
+- Interfaz web responsive con diseño moderno
+- Sistema de logs y monitoreo en tiempo real
+- Documentación técnica completa con análisis de complejidad
+- Build automation con Makefile
+- Código limpio con estándares C++11
 
-## 🚀 Inicio Rápido
+## Instalación y Ejecución
 
-### Opción 1: Interfaz Web Avanzada (Recomendado)
+### Frontend - Interfaz Web
 
-La implementación avanzada con modularidad mejorada:
-
+Abrir directamente en navegador:
 ```bash
-# Abrir directamente
 cd src/frontend
-# Doble clic en index.html
+# Abrir index.html en navegador
 ```
 
-O con servidor HTTP:
+Con servidor HTTP:
 ```bash
 cd src/frontend
 python -m http.server 8000
-# Abre http://localhost:8000 en tu navegador
+# Acceder a http://localhost:8000
 ```
 
-### Opción 2: Interfaz Web Original
-
-```bash
-# Abre el archivo directamente en tu navegador
-cd frontend
-# Doble clic en index.html
-```
-
-O con servidor HTTP:
-```bash
-cd frontend
-python3 -m http.server 8080
-# Abre http://localhost:8080 en tu navegador
-```
-
-### Opción 3: Backend C++ con Makefile (Implementación Avanzada)
+### Backend - C++ con Makefile
 
 ```bash
 # Compilar
 make
 
-# Ejecutar demo
+# Ejecutar demostración
 make run
 
 # Limpiar archivos compilados
 make clean
 ```
 
-### Opción 4: Backend C++ Original
+### Backend - Compilación Manual
 
 ```bash
-# Compilar
 cd backend
 g++ -o simulador simulador.cpp -std=c++11
-
-# Ejecutar
 ./simulador
 ```
-## 📁 Estructura del Proyecto
 
-Este proyecto contiene dos implementaciones complementarias:
+## Estructura del Proyecto
 
-### Implementación Avanzada (src/)
 ```
-src/
-├── cpp/                    # Backend C++ modular
-│   ├── queue.h            # Cola para scheduling
-│   ├── stack.h            # Pila para call stack
-│   ├── linkedlist.h       # Lista para memoria
-│   ├── tree.h             # Árbol para archivos
-│   └── main.cpp           # Programa de demostración
-└── frontend/              # Frontend Web moderno
-    ├── index.html         # Página principal
-    ├── css/
-    │   └── styles.css     # Estilos modernos
-    └── js/
-        ├── queue.js       # Lógica de cola
-        ├── stack.js       # Lógica de pila
-        ├── linkedlist.js  # Lógica de lista
-        ├── tree.js        # Lógica de árbol
-        └── main.js        # Navegación
-```
-
-### Implementación Original (backend/ & frontend/)
-```
-├── backend/          # Lógica en C++
+├── src/
+│   ├── cpp/                    # Backend C++ modular
+│   │   ├── queue.h            # Implementación de cola
+│   │   ├── stack.h            # Implementación de pila
+│   │   ├── linkedlist.h       # Implementación de lista enlazada
+│   │   ├── tree.h             # Implementación de árbol
+│   │   └── main.cpp           # Programa de demostración
+│   └── frontend/              # Frontend Web
+│       ├── index.html         # Página principal
+│       ├── css/
+│       │   └── styles.css     # Estilos
+│       └── js/
+│           ├── queue.js       # Lógica de cola
+│           ├── stack.js       # Lógica de pila
+│           ├── linkedlist.js  # Lógica de lista
+│           ├── tree.js        # Lógica de árbol
+│           └── main.js        # Controlador principal
+├── backend/                   # Implementación original C++
 │   └── simulador.cpp
-├── frontend/         # Interfaz web
+├── frontend/                  # Interfaz web original
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
-└── data/             # Datos JSON
-    └── procesos.json
-```
-
-### Documentación y Build
-```
-├── docs/                      # Documentación completa
-│   ├── GUIA_DE_USO.md        # Guía del usuario
-│   └── DOCUMENTACION_TECNICA.md # Documentación técnica
+├── docs/                      # Documentación técnica
+│   ├── GUIA_DE_USO.md
+│   └── DOCUMENTACION_TECNICA.md
 ├── Makefile                   # Build automation
-├── INSTALACION.md            # Guía de instalación
-├── GUIA_RAPIDA.md            # Guía rápida original
-├── README_PROYECTO.md        # Documentación del proyecto original
-└── README.md                  # Este archivo
+└── README.md
 ```
 
-## 🎯 Estructuras de Datos Implementadas
+## Estructuras de Datos Implementadas
 
 ### 1. Cola (Queue) - Planificador de Procesos
 - **Tipo**: FIFO (First In, First Out)
-- **Uso**: Gestión de procesos en espera
+- **Aplicación**: Gestión de procesos en espera
 - **Operaciones**: `enqueue()`, `dequeue()`, `peek()`
 - **Complejidad**: O(1) para todas las operaciones
 
 ### 2. Pila (Stack) - Pila de Llamadas
 - **Tipo**: LIFO (Last In, First Out)
-- **Uso**: Gestión de llamadas de función con demo de recursión
+- **Aplicación**: Gestión de llamadas de función con simulación de recursión
 - **Operaciones**: `push()`, `pop()`, `peek()`
 - **Complejidad**: O(1) para todas las operaciones
 
 ### 3. Lista Enlazada - Gestión de Memoria
 - **Tipo**: Lista simplemente enlazada
-- **Uso**: Asignación dinámica de bloques de memoria
+- **Aplicación**: Asignación dinámica de bloques de memoria
 - **Operaciones**: `insertFirst()`, `insertLast()`, `remove()`, `find()`
 - **Complejidad**: O(1) para inserción, O(n) para búsqueda
 
 ### 4. Árbol - Sistema de Archivos
 - **Tipo**: Árbol n-ario
-- **Uso**: Jerarquía de directorios y archivos
+- **Aplicación**: Jerarquía de directorios y archivos
 - **Operaciones**: `addChild()`, `removeNode()`, `findNode()`
 - **Complejidad**: O(n) para búsqueda, O(1) para inserción
 
-## 🛠️ Requisitos
+## Requisitos Técnicos
 
 ### Backend
 - Compilador C++ compatible con C++11 o superior
@@ -163,7 +126,6 @@ src/
   - clang 3.4+
   - MSVC 2015+
 - Make (opcional)
-- Compila limpiamente con `-Wall -Wextra -Wpedantic`
 
 ### Frontend
 - Navegador web moderno:
@@ -172,147 +134,102 @@ src/
   - Safari 14+
   - Edge 90+
 
-## 📖 Documentación
+## Documentación
 
-### Documentación Avanzada
-- **[Guía de Uso](docs/GUIA_DE_USO.md)**: Instrucciones detalladas para usuarios
-- **[Documentación Técnica](docs/DOCUMENTACION_TECNICA.md)**: Detalles de implementación y análisis de complejidad
-- **[Instalación](INSTALACION.md)**: Guía completa de instalación
+- **[Guía de Uso](docs/GUIA_DE_USO.md)**: Instrucciones detalladas de operación
+- **[Documentación Técnica](docs/DOCUMENTACION_TECNICA.md)**: Análisis de implementación y complejidad algorítmica
+- **[Instalación](INSTALACION.md)**: Guía completa de instalación y configuración
 
-### Documentación Original
-- **[GUIA_RAPIDA.md](GUIA_RAPIDA.md)**: Tutorial paso a paso para usar el simulador
-- **[README_PROYECTO.md](README_PROYECTO.md)**: Documentación técnica completa del proyecto
-
-## 🎮 Cómo Usar
+## Guía de Uso
 
 ### Interfaz Web
 
-1. **Navegación**: Use los botones en la barra superior o atajos de teclado (Ctrl+1 a Ctrl+4)
-2. **Controles**: Cada sección tiene controles específicos para agregar, eliminar y modificar elementos
-3. **Visualización**: Los cambios se reflejan en tiempo real en el área de visualización
-4. **Información**: El panel inferior muestra estadísticas actualizadas
+1. **Navegación**: Utilizar botones superiores o atajos de teclado (Ctrl+1 a Ctrl+4)
+2. **Controles**: Cada módulo incluye controles específicos para gestión de elementos
+3. **Visualización**: Actualización en tiempo real del estado de las estructuras
+4. **Monitoreo**: Panel de estadísticas y logs del sistema
 
-### Ejemplos Prácticos
+### Ejemplos de Operaciones
 
-#### Cola - Agregar procesos
+#### Cola - Gestión de Procesos
 ```
-1. Ingrese nombre: "Chrome"
-2. Prioridad: 1
-3. Tiempo: 5
-4. Click "Agregar Proceso"
-5. Click "Ejecutar Proceso" para procesarlo
-```
-
-#### Pila - Simular recursión
-```
-1. Click "Simular Recursión"
-2. Observe cómo se apilan las llamadas
-3. Note el orden LIFO al desapilar
+1. Ingresar nombre del proceso
+2. Asignar prioridad
+3. Definir tiempo de ejecución
+4. Agregar a cola
+5. Ejecutar proceso (FIFO)
 ```
 
-#### Lista Enlazada - Gestionar memoria
+#### Pila - Simulación de Call Stack
 ```
-1. Click en un bloque para seleccionarlo
-2. Click "Asignar Memoria" para asignarlo
-3. Click "Liberar Memoria" para liberarlo
-```
-
-#### Árbol - Crear estructura
-```
-1. Click en un directorio
-2. Ingrese nombre del nuevo nodo
-3. Seleccione tipo (Directorio/Archivo)
-4. Click "Agregar Nodo"
+1. Ejecutar simulación de recursión
+2. Observar apilamiento de llamadas
+3. Verificar orden LIFO en desapilamiento
 ```
 
-## 🎨 Capturas de Pantalla
+#### Lista Enlazada - Gestión de Memoria
+```
+1. Seleccionar bloque de memoria
+2. Asignar o liberar bloque
+3. Visualizar fragmentación y disponibilidad
+```
 
-### Vista Previa del Simulador Original
-![Simulador de Sistema Operativo](https://github.com/user-attachments/assets/57170c37-452a-42f2-af54-59ffc236207f)
+#### Árbol - Sistema de Archivos
+```
+1. Seleccionar nodo padre
+2. Definir nombre del nuevo elemento
+3. Especificar tipo (Directorio/Archivo)
+4. Agregar a jerarquía
+```
 
-### Implementación Avanzada
+## Capturas de Pantalla
 
-#### Queue - Process Scheduling
+### Cola - Planificación de Procesos
 ![Queue](https://github.com/user-attachments/assets/f87640fb-78d3-445f-8f44-2f8ba4702f96)
 
-#### Stack - Call Stack with Recursion
+### Pila - Call Stack con Recursión
 ![Stack](https://github.com/user-attachments/assets/d4adbfeb-948d-4014-bcf7-be328fce35ce)
 
-#### LinkedList - Memory Management
+### Lista Enlazada - Gestión de Memoria
 ![LinkedList](https://github.com/user-attachments/assets/54a028a6-cf01-4e0d-9327-5a7be2562571)
 
-#### Tree - File System Hierarchy
+### Árbol - Sistema de Archivos
 ![Tree](https://github.com/user-attachments/assets/05172bd5-dd9e-4e3e-baee-c875f982300f)
 
-La interfaz presenta:
-- ✨ Diseño moderno con gradientes y colores neón
-- 🎯 Visualizaciones claras de cada estructura
-- 📊 Paneles informativos con estadísticas en tiempo real
-- 🔄 Animaciones suaves en las transiciones
-- 📱 Diseño responsive para todos los dispositivos
+## Testing y Validación
 
-## 🧪 Testing
-
-### Pruebas del Backend Avanzado
+### Pruebas Backend
 ```bash
 make run
-# Verifica la salida de consola para cada estructura
+# Verificar salida de consola para validar operaciones
 ```
 
-### Pruebas del Backend Original
-```bash
-cd backend
-./simulador
-```
+### Pruebas Frontend
+1. Abrir interfaz web en navegador
+2. Ejecutar operaciones en cada módulo
+3. Validar logs en consola del navegador (F12)
 
-### Pruebas del Frontend
-1. Abrir `src/frontend/index.html` o `frontend/index.html` en navegador
-2. Probar cada operación en cada estructura
-3. Verificar consola del navegador (F12) para logs
+## Conceptos Técnicos Demostrados
 
-## 📚 Conceptos Demostrados
+- Implementación de estructuras de datos fundamentales
+- Manejo de memoria dinámica en C++
+- Templates genéricos y programación orientada a objetos
+- Manipulación del DOM con JavaScript
+- Diseño web responsive
+- Análisis de complejidad algorítmica
+- Build automation y gestión de dependencias
 
-Este proyecto demuestra:
-- ✅ Implementación de estructuras de datos fundamentales
-- ✅ Manejo de memoria dinámica en C++
-- ✅ Templates genéricos en C++
-- ✅ Manipulación del DOM con JavaScript puro
-- ✅ Diseño web responsive y moderno
-- ✅ Aplicación práctica de algoritmos
-- ✅ Análisis de complejidad temporal
-- ✅ Build automation con Makefile
+## Stack Tecnológico
 
-## 🛠️ Tecnologías
+- **Backend**: C++ (C++11 o superior)
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Formato de Datos**: JSON
+- **Build System**: Make
 
-- C++ (Backend - C++11 o superior)
-- HTML5 + CSS3 + JavaScript (Frontend)
-- JSON (Intercambio de datos)
-- Make (Build automation)
+## Licencia
 
-## 🤝 Contribuciones
-
-Este es un proyecto académico. Las contribuciones son bienvenidas para:
-- Mejoras en la documentación
-- Corrección de errores
-- Optimizaciones de rendimiento
-- Nuevas características
-
-## 📝 Licencia
-
-Proyecto académico con fines educativos - Universidad 2025
-
-## 👥 Autores
-
-Proyecto de Estructuras de Datos - Curso Académico
-
-## 🙏 Agradecimientos
-
-- A los profesores del curso de Estructuras de Datos
-- A la comunidad de desarrolladores por las referencias
-- A todos los que contribuyen al aprendizaje de la programación
+Proyecto académico con fines educativos - 2025
 
 ---
 
-**💡 Nota**: Este proyecto fue creado con fines educativos para demostrar el uso práctico de estructuras de datos clásicas en el contexto de sistemas operativos.
-
-**Desarrollado como proyecto académico de Estructuras de Datos**
+**Proyecto desarrollado para demostrar competencias en estructuras de datos, algoritmos y desarrollo full-stack.**

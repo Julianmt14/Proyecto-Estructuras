@@ -1,14 +1,13 @@
-# Compiled executables
-simulator
+# Compiled C++ files
 *.exe
 *.out
-*.app
-
-# Object files
 *.o
 *.obj
+*.app
 *.ko
 *.elf
+simulador
+simulator
 
 # Precompiled Headers
 *.gch
@@ -32,29 +31,31 @@ simulator
 *.idb
 *.pdb
 
-# Build directories
-build/
-dist/
-target/
-
-# IDE specific files
+# IDE and editor files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+
+# System files
 .DS_Store
+Thumbs.db
+.directory
 
 # Temporary files
+/tmp/
 *.tmp
 *.temp
 *.log
 *.bak
 *.backup
 
-# Node modules (if using npm in future)
+# Node modules (if using npm in the future)
 node_modules/
+package-lock.json
 
-# OS specific
-Thumbs.db
-.directory
+# Build directories
+build/
+dist/
+target/
